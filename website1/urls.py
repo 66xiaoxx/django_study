@@ -16,14 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
+from django.views.static import serve
 from  webpage import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index),
-    path('index/1.png', views.index),
+    # path('index/1.png', views.index),
     path('login/', views.login),
     path('logout/', views.logout),
     path('register/', views.register),
+    path('static/(?P<path>.*)', serve, {'document_root':'/webpage/static'}),
 
 ]
