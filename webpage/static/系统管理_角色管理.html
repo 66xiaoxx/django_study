@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>角色管理</title>
+	<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="css/icon.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+    <script>  $(document).ready(function(){  
+        $(".window").css("display","none");  
+        $(".window-shadow").css("display","none");
+    });
+	</script>
+</head>
+<body class="body_so">
+<div class="box_inner">
+    <div class="path">
+    系统管理 > 角色管理
+    </div>
+    <div class="box_content">
+    	<div class="box_search">
+        	<span class="text">角色名称</span>
+            <input class="w120" type="text" />
+            <span class="text ml20">角色代码</span>
+            <input class="w120" type="text" />
+            <span class="text ml20">子系统</span>
+            <select class="w120">
+                <option value="全部">全部</option>
+                <option value="工单管理">工单管理</option>
+                <option value="知识库">知识库</option>
+                <option value="质检管理">质检管理</option>
+                <option value="统计分析">统计分析</option>
+                <option value="考勤排班">考勤排班</option>
+                <option value="后台管理">后台管理</option>
+            </select>
+            <a class="btn_org ml10">搜索</a>
+        </div>
+        <div class="btn_box">
+            <span class="line_y"></span>
+        	<a class="btn_icon add" onclick="$('#addBox').window('open')">新增</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon edit">修改</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon del">删除</a>
+            <span class="line_y"></span>
+        </div>
+        <table class="tableStyleA hav_qx">
+            <tr>
+                <th width="4%"><input type="checkbox" /></th>
+                <th width="5%">序号</th>
+                <th width="18%">角色名称</th>
+                <th>角色代码</th>
+                <th>创建人</th>
+                <th>创建时间</th>
+                <th width="240">操作</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>1</td>
+                <td><a class="a_text"  onclick="$('#con').window('open')">HRMS培训考试管理员</a><a class="icon_map"></a><a class="icon_chart"></a><a class="icon_link link_hav"></a></td>
+                <td>M_HOTLINE_CBY</td>
+                <td>管理员</td>
+                <td>2016-08-17 10:42:56</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w1').window('open')">角色菜单配置</a>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">角色按钮配置</a>
+                    <a class="btn_org2" onclick="$('#xxsq').window('open')">消息授权</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>2</td>
+                <td><a class="a_text"  onclick="$('#con').window('open')">HRMS培训考试管理员</a><a class="icon_map"></a><a class="icon_chart"></a><a class="icon_link link_hav"></a></td>
+                <td>M_HOTLINE_CBY</td>
+                <td>管理员</td>
+                <td>2016-08-17 10:42:56</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w1').window('open')">角色菜单配置</a>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">角色按钮配置</a>
+                    <a class="btn_org2" onclick="$('#xxsq').window('open')">消息授权</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>3</td>
+                <td><a class="a_text"  onclick="$('#con').window('open')">HRMS培训考试管理员</a><a class="icon_map"></a><a class="icon_chart"></a><a class="icon_link link_hav"></a></td>
+                <td>M_HOTLINE_CBY</td>
+                <td>管理员</td>
+                <td>2016-08-17 10:42:56</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w1').window('open')">角色菜单配置</a>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">角色按钮配置</a>
+                    <a class="btn_org2" onclick="$('#xxsq').window('open')">消息授权</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>4</td>
+                <td><a class="a_text"  onclick="$('#con').window('open')">HRMS培训考试管理员</a><a class="icon_map"></a><a class="icon_chart"></a><a class="icon_link link_hav"></a></td>
+                <td>M_HOTLINE_CBY</td>
+                <td>管理员</td>
+                <td>2016-08-17 10:42:56</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w1').window('open')">角色菜单配置</a>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">角色按钮配置</a>
+                    <a class="btn_org2" onclick="$('#xxsq').window('open')">消息授权</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>5</td>
+                <td><a class="a_text"  onclick="$('#con').window('open')">HRMS培训考试管理员</a><a class="icon_map"></a><a class="icon_chart"></a><a class="icon_link link_hav"></a></td>
+                <td>M_HOTLINE_CBY</td>
+                <td>管理员</td>
+                <td>2016-08-17 10:42:56</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w1').window('open')">角色菜单配置</a>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">角色按钮配置</a>
+                    <a class="btn_org2" onclick="$('#xxsq').window('open')">消息授权</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>6</td>
+                <td><a class="a_text"  onclick="$('#con').window('open')">HRMS培训考试管理员</a><a class="icon_map"></a><a class="icon_chart"></a><a class="icon_link link_hav"></a></td>
+                <td>M_HOTLINE_CBY</td>
+                <td>管理员</td>
+                <td>2016-08-17 10:42:56</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w1').window('open')">角色菜单配置</a>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">角色按钮配置</a>
+                    <a class="btn_org2" onclick="$('#xxsq').window('open')">消息授权</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>7</td>
+                <td><a class="a_text"  onclick="$('#con').window('open')">HRMS培训考试管理员</a><a class="icon_map"></a><a class="icon_chart"></a><a class="icon_link link_hav"></a></td>
+                <td>M_HOTLINE_CBY</td>
+                <td>管理员</td>
+                <td>2016-08-17 10:42:56</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w1').window('open')">角色菜单配置</a>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">角色按钮配置</a>
+                    <a class="btn_org2" onclick="$('#xxsq').window('open')">消息授权</a>
+                </td>
+            </tr>
+        </table>
+        <div class="pages">
+        	<div class="text">每页10条  共548条</div>
+            <select>
+                <option>7</option>
+            </select>
+            <a class="bb"><img src="css/images/pages_a.png" /></a>
+            <a class="bb"><img src="css/images/pages_b.png" /></a>
+            <span>1</span>
+            <a>2</a>
+            <a class="bb"><img src="css/images/pages_c.png" /></a>
+            <a class="bb"><img src="css/images/pages_d.png" /></a>
+        </div>
+        
+
+    </div>
+</div>
+
+<!--消息授权-->
+<div id="xxsq" class="easyui-window pop_win pop_wide" title="消息授权" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_con_a">
+    	<div class="win_con_two bg_gray h400">
+            <div class="one_search">
+                <input type="text"  />
+                <a class="btn_org">搜索</a>
+            </div>
+            <div class="tree_b h360 h_auto">
+            	<ul class="list_style_p15">
+                    <li><input type="checkbox" />黑名单审核通过通知-短信</li>
+                    <li><input type="checkbox" />黑名单审核通过发送站内短信</li>
+                    <li><input type="checkbox" />话务实时监控短信</li>
+                    <li><input type="checkbox" />测试</li>
+                </ul>
+            </div>
+            <div class="line_y_b100"></div>
+            <div class="win_right_a">
+                <div class="pt10 pb10">已选择</div>
+                <ul class="list_style_a h360 h_auto hav_ra1">
+                    <li>测试<a class="poa_r fOrg">删除</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box_btns_tc">
+            <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+            <a class="btn_large btn_blue btn_win_close">保存</a>
+        </div>
+    </div>
+</div>
+
+<!--菜单选择-->
+<div id="w1" class="easyui-window pop_win pop_wide" title="角色菜单配置" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+    <div class="win_con_a">
+    	<div class="win_con_two bg_gray h400">
+            <div class="one_search">
+                <input type="text"  />
+                <a class="btn_org">搜索</a>
+            </div>
+            <div class="tree_b h360 h_auto">
+            	<img src="css/images/_tree2.png" />
+            </div>
+            <div class="line_y_b100"></div>
+            <div class="win_right_a">
+                <div class="pt10 pb10">角色菜单</div>
+                <ul class="list_style_a h360 h_auto hav_ra1">
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 数据分析 > 后台管理配置 > 词库配置管理<a class="poa_r fOrg">删除</a></li>
+                    <li>业务平台 > 统计平台 > 日常服表 > 统计平台测试<a class="poa_r fOrg">删除</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box_btns_tc">
+            <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+            <a class="btn_large btn_blue btn_win_close">保存</a>
+        </div>
+    </div>
+</div>
+
+<!--按钮选择-->
+<div id="w2" class="easyui-window pop_win pop_narrow hav_btn_270" title="角色按钮配置" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_con">
+        <ul class="list_btns">
+            <li><input type="checkbox" /><span class="btn_icon add">新增</span></li>
+            <li><input type="checkbox" /><span class="btn_icon edit">修改</span></li>
+            <li><input type="checkbox" /><span class="btn_icon del">删除</span></li>
+            <li><input type="checkbox" /><span class="btn_icon paixu_save">保存排序</span></li>
+            <li><input type="checkbox" /><span class="btn_icon p_up">排序上</span></li>
+            <li><input type="checkbox" /><span class="btn_icon p_down">排序下</span></li>
+            <li><input type="checkbox" /><span class="btn_icon daoru">导入</span></li>
+            <li><input type="checkbox" /><span class="btn_icon daochu">导出</span></li>
+            <li><input type="checkbox" /><span class="btn_icon chush">初始化权限</span></li>
+            <li><input type="checkbox" /><span class="btn_icon seeall">显示全部</span></li>
+            <li><input type="checkbox" /><span class="btn_icon tingy">停用</span></li>
+            <li><input type="checkbox" /><span class="btn_icon user">用户角色配置</span></li>
+            <li><input type="checkbox" /><span class="btn_icon user_cha">批量修改角色</span></li>
+            <li><input type="checkbox" /><span class="btn_icon mima">修改签入密码</span></li>
+            <li><input type="checkbox" /><span class="btn_icon all">图层</span></li>
+            <li><input type="checkbox" /><span class="btn_icon clock">密码</span></li>
+            <li><input type="checkbox" /><span class="btn_icon clold">云</span></li>
+            <li><input type="checkbox" /><span class="btn_icon con">目录或菜单列表</span></li>
+            <li><input type="checkbox" /><span class="btn_icon down">下载</span></li>
+            <li><input type="checkbox" /><span class="btn_icon large">移动</span></li>
+            <li><input type="checkbox" /><span class="btn_icon list">文章</span></li>
+            <li><input type="checkbox" /><span class="btn_icon look">放大搜索查找</span></li>
+            <li><input type="checkbox" /><span class="btn_icon nn">内容</span></li>
+            <li><input type="checkbox" /><span class="btn_icon peos">用户</span></li>
+            <li><input type="checkbox" /><span class="btn_icon print">打印</span></li>
+            <li><input type="checkbox" /><span class="btn_icon qian">金币</span></li>
+            <li><input type="checkbox" /><span class="btn_icon qux">趋势</span></li>
+            <li><input type="checkbox" /><span class="btn_icon reduce">减少</span></li>
+            <li><input type="checkbox" /><span class="btn_icon shezhi">工具管理</span></li>
+            <li><input type="checkbox" /><span class="btn_icon shouc">收藏</span></li>
+            <li><input type="checkbox" /><span class="btn_icon shuax">刷新</span></li>
+            <li><input type="checkbox" /><span class="btn_icon up">上传</span></li>
+            <li><input type="checkbox" /><span class="btn_icon wjj">文件夹</span></li>
+            <li><input type="checkbox" /><span class="btn_icon wjj_open">文件夹打开</span></li>
+            <li><input type="checkbox" /><span class="btn_icon yaos">开锁</span></li>
+            <li><input type="checkbox" /><span class="btn_icon fabu">发布</span></li>
+            <li><input type="checkbox" /><span class="btn_icon fabuqx">取消发布</span></li>
+        </ul>
+    </div>
+    <div class="box_btns_tc">
+        <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+        <a class="btn_large btn_blue btn_win_close">保存</a>
+    </div>
+</div>
+
+<!--新增-->
+<div id="addBox" class="easyui-window pop_win pop_narrow hav_btn_300" title="新增" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_con pl10 pr10">
+        <table class="table_input_a mt10">
+            <tr>
+                <th width="20%"><span class="red">*</span>角色名称</th>
+                <td><input class="wb_bz" type="text" /></td>
+            </tr>
+            <tr>
+                <th>角色代码</th>
+                <td><input class="wb_bz" type="text" /></td>
+            </tr>
+            <tr>
+                <th><span class="red">*</span>角色所属子系统</th>
+                <td><input name="radio1" type="radio" />工单系统<input class="ml20" name="radio1" type="radio" />考勤系统</td>
+            </tr>
+            <tr>
+                <th>角色描述</th>
+                <td><textarea class="wb_bz"></textarea></td>
+            </tr>
+        </table>
+    </div>
+    <div class="box_btns_tc">
+        <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+        <a class="btn_large btn_blue btn_win_close">保存</a>
+    </div>
+</div>
+
+<!--详情-->
+<div id="con" class="easyui-window pop_win pop_narrow hav_btn_300" title="详情" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_con pl10 pr10">
+        <table class="table_input_a mt10">
+            <tr>
+                <th width="20%"><span class="red">*</span>角色名称</th>
+                <td>角色名称</td>
+            </tr>
+            <tr>
+                <th>角色代码</th>
+                <td>3565523222</td>
+            </tr>
+            <tr>
+                <th><span class="red">*</span>角色所属子系统</th>
+                <td>考勤系统</td>
+            </tr>
+            <tr>
+                <th>角色描述</th>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="box_btns_tc">
+        <a class="btn_large btn_blue_dim btn_win_close">关闭</a>
+    </div>
+</div>
+</body>
+</html>

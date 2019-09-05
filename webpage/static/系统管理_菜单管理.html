@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>菜单管理</title>
+	<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="css/icon.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+    <script>  $(document).ready(function(){  
+        $(".window").css("display","none");  
+        $(".window-shadow").css("display","none");
+    });
+	</script>
+</head>
+<body class="body_so">
+<div class="box_inner">
+    <div class="path">
+    系统管理 > 菜单管理
+    </div>
+    <div class="tree_box">
+    	<div class="tree_tt">
+        	<span class="text">菜单树</span>
+            <a class="btn_l_r"></a>
+        </div>
+        <div class="tree"><img src="css/images/_tree.png" /></div>
+    </div>
+    <div class="box_content">
+    	<div class="box_search">
+        	<span class="text">菜单名称</span>
+            <input class="w120" type="text" />
+            <span class="text ml20">状态</span>
+            <select class="w120">
+                <option value="全部">全部</option>
+                <option value="公开">公开</option>
+                <option value="不公开">不公开</option>
+            </select>
+            <a class="btn_org ml10">搜索</a>
+        </div>
+        <div class="btn_box">
+            <span class="line_y"></span>
+        	<a class="btn_icon add" onclick="$('#addBox').window('open')">新增</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon edit">修改</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon del">删除</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon paixu_save">保存排序</a>
+            <span class="line_y"></span>
+        </div>
+        <table class="tableStyleA hav_qx">
+            <tr>
+                <th width="4%"><input type="checkbox" /></th>
+                <th width="5%">序号</th>
+                <th width="7%">排序号</th>
+                <th width="18%">菜单名称</th>
+                <th>编号</th>
+                <th width="20%">路径</th>
+                <th>上级菜单</th>
+                <th>状态</th>
+                <th width="95">操作</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>1</td>
+                <td><input type="text" class="w40 tc" value="1" /></td>
+                <td>报表说明管理</td>
+                <td>report_instruction</td>
+                <td>/admin/menu/toReportMenu.do</td>
+                <td>系统菜单</td>
+                <td>公开</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">菜单按钮配置</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>2</td>
+                <td><input type="text" class="w40 tc" value="2" /></td>
+                <td>报表说明管理</td>
+                <td>report_instruction</td>
+                <td>/admin/menu/toReportMenu.do</td>
+                <td>系统菜单</td>
+                <td>公开</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">菜单按钮配置</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>3</td>
+                <td><input type="text" class="w40 tc" value="3" /></td>
+                <td>报表说明管理</td>
+                <td>report_instruction</td>
+                <td>/admin/menu/toReportMenu.do</td>
+                <td>系统菜单</td>
+                <td>公开</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">菜单按钮配置</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>4</td>
+                <td><input type="text" class="w40 tc" value="4" /></td>
+                <td>报表说明管理</td>
+                <td>report_instruction</td>
+                <td>/admin/menu/toReportMenu.do</td>
+                <td>系统菜单</td>
+                <td>公开</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">菜单按钮配置</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>5</td>
+                <td><input type="text" class="w40 tc" value="5" /></td>
+                <td>报表说明管理</td>
+                <td>report_instruction</td>
+                <td>/admin/menu/toReportMenu.do</td>
+                <td>系统菜单</td>
+                <td>公开</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">菜单按钮配置</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>6</td>
+                <td><input type="text" class="w40 tc" value="6" /></td>
+                <td>报表说明管理</td>
+                <td>report_instruction</td>
+                <td>/admin/menu/toReportMenu.do</td>
+                <td>系统菜单</td>
+                <td>公开</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">菜单按钮配置</a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>7</td>
+                <td><input type="text" class="w40 tc" value="7" /></td>
+                <td>报表说明管理</td>
+                <td>report_instruction</td>
+                <td>/admin/menu/toReportMenu.do</td>
+                <td>系统菜单</td>
+                <td>公开</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">菜单按钮配置</a>
+                </td>
+            </tr>
+        </table>
+        <div class="pages">
+        	<div class="text">每页10条  共548条</div>
+            <select>
+                <option>7</option>
+            </select>
+            <a class="bb"><img src="css/images/pages_a.png" /></a>
+            <a class="bb"><img src="css/images/pages_b.png" /></a>
+            <span>1</span>
+            <a>2</a>
+            <a class="bb"><img src="css/images/pages_c.png" /></a>
+            <a class="bb"><img src="css/images/pages_d.png" /></a>
+        </div>
+        
+
+    </div>
+</div>
+
+<!--按钮配置-->
+<div id="w2" class="easyui-window pop_win pop_narrow hav_btn_270" title="菜单按钮配置" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_con">
+        <ul class="list_btns">
+            <li><input type="checkbox" /><span class="btn_icon add">新增</span></li>
+            <li><input type="checkbox" /><span class="btn_icon edit">修改</span></li>
+            <li><input type="checkbox" /><span class="btn_icon del">删除</span></li>
+            <li><input type="checkbox" /><span class="btn_icon paixu_save">保存排序</span></li>
+            <li><input type="checkbox" /><span class="btn_icon p_up">排序上</span></li>
+            <li><input type="checkbox" /><span class="btn_icon p_down">排序下</span></li>
+            <li><input type="checkbox" /><span class="btn_icon daoru">导入</span></li>
+            <li><input type="checkbox" /><span class="btn_icon daochu">导出</span></li>
+            <li><input type="checkbox" /><span class="btn_icon chush">初始化权限</span></li>
+            <li><input type="checkbox" /><span class="btn_icon seeall">显示全部</span></li>
+            <li><input type="checkbox" /><span class="btn_icon tingy">停用</span></li>
+            <li><input type="checkbox" /><span class="btn_icon user">用户角色配置</span></li>
+            <li><input type="checkbox" /><span class="btn_icon user_cha">批量修改角色</span></li>
+            <li><input type="checkbox" /><span class="btn_icon mima">修改签入密码</span></li>
+            <li><input type="checkbox" /><span class="btn_icon all">图层</span></li>
+            <li><input type="checkbox" /><span class="btn_icon clock">密码</span></li>
+            <li><input type="checkbox" /><span class="btn_icon clold">云</span></li>
+            <li><input type="checkbox" /><span class="btn_icon con">目录或菜单列表</span></li>
+            <li><input type="checkbox" /><span class="btn_icon down">下载</span></li>
+            <li><input type="checkbox" /><span class="btn_icon large">移动</span></li>
+            <li><input type="checkbox" /><span class="btn_icon list">文章</span></li>
+            <li><input type="checkbox" /><span class="btn_icon look">放大搜索查找</span></li>
+            <li><input type="checkbox" /><span class="btn_icon nn">内容</span></li>
+            <li><input type="checkbox" /><span class="btn_icon peos">用户</span></li>
+            <li><input type="checkbox" /><span class="btn_icon print">打印</span></li>
+            <li><input type="checkbox" /><span class="btn_icon qian">金币</span></li>
+            <li><input type="checkbox" /><span class="btn_icon qux">趋势</span></li>
+            <li><input type="checkbox" /><span class="btn_icon reduce">减少</span></li>
+            <li><input type="checkbox" /><span class="btn_icon shezhi">工具管理</span></li>
+            <li><input type="checkbox" /><span class="btn_icon shouc">收藏</span></li>
+            <li><input type="checkbox" /><span class="btn_icon shuax">刷新</span></li>
+            <li><input type="checkbox" /><span class="btn_icon up">上传</span></li>
+            <li><input type="checkbox" /><span class="btn_icon wjj">文件夹</span></li>
+            <li><input type="checkbox" /><span class="btn_icon wjj_open">文件夹打开</span></li>
+            <li><input type="checkbox" /><span class="btn_icon yaos">开锁</span></li>
+            <li><input type="checkbox" /><span class="btn_icon fabu">发布</span></li>
+            <li><input type="checkbox" /><span class="btn_icon fabuqx">取消发布</span></li>
+        </ul>
+    </div>
+    <div class="box_btns_tc">
+        <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+        <a class="btn_large btn_blue btn_win_close">保存</a>
+    </div>
+</div>
+
+
+<!--新增-->
+<div id="addBox" class="easyui-window pop_win pop_narrow hav_btn_350" title="新增" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_con pl10 pr10">
+        <table class="table_input_a mt10">
+            <tr>
+                <th width="18%">编号</th>
+                <td><input class="wb_bz" type="text" /></td>
+            </tr>
+            <tr>
+                <th><span class="red">*</span>名称</th>
+                <td><input class="wb_bz" type="text" /></td>
+            </tr>
+            <tr>
+                <th><span class="red">*</span>路径</th>
+                <td><input class="wb_bz" type="text" /></td>
+            </tr>
+            <tr>
+                <th>状态</th>
+                <td><input name="radio1" type="radio" />公开<input class="ml20" name="radio1" type="radio" />不公开</td>
+            </tr>
+            <tr>
+                <th><span class="red">*</span>上级菜单</th>
+                <td><select class="wb_bz"></select></td>
+            </tr>
+            <tr>
+                <th>排序码</th>
+                <td><input class="wb_bz" type="text" /></td>
+            </tr>
+        </table>
+    </div>
+    <div class="box_btns_tc">
+        <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+        <a class="btn_large btn_blue btn_win_close">保存</a>
+    </div>
+</div>
+</body>
+</html>

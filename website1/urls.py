@@ -22,11 +22,16 @@ from  webpage import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index),
-    # path('index/1.png', views.index),
+    path('main/', views.main),
     path('login/', views.login),
     path('logout/', views.logout),
     path('register/', views.register),
-    path('static/(?P<path>.*)', serve, {'document_root':'/webpage/static'}),
+    path('static/(?P<path>.*)', serve, {'document_root': '/webpage/static'}),
+    path('static/css/(?P<path>.*)', serve, {'document_root': '/webpage/static/css'}),
+    path('static/css/images/(?P<path>.*)', serve, {'document_root': '/webpage/static/css/images'}),
+    path('static/css/icons/(?P<path>.*)', serve, {'document_root': '/webpage/static/css/icons'}),
+    path('static/v2.0/(?P<path>.*)', serve, {'document_root': '/webpage/static/v2.0'}),
+    path('static/v2.0/css/(?P<path>.*)', serve, {'document_root': '/webpage/static/v2.0/css'}),
+    path('static/v2.0/js/(?P<path>.*)', serve, {'document_root': '/webpage/static/v2.0/js'}),
 
 ]

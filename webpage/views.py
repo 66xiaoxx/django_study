@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect
 
-def index(request):
+def main(request):
     pass
-    return  render(request,'login/index.html')
+    return  render(request,'login1/main.html')
 
 
 def login(request):

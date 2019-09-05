@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>按钮管理</title>
+	<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="css/icon.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+    <script>  $(document).ready(function(){  
+        $(".window").css("display","none");  
+        $(".window-shadow").css("display","none");
+    });
+	</script>
+</head>
+<body class="body_so">
+<div class="box_inner">
+    <div class="path">
+    系统管理 > 按钮管理
+    </div>
+    <div class="tree_box">
+    	<div class="tree_tt">
+        	<span class="text">菜单树</span>
+            <a class="btn_l_r"></a>
+        </div>
+        <div class="tree"><img src="css/images/_tree.png" /></div>
+    </div>
+    <div class="box_content">
+    	<div class="box_search">
+        	<span class="text">按钮名称</span>
+            <input class="w120" type="text" />
+            <span class="text ml20">按钮代码</span>
+            <input class="w120" type="text" />
+            <a class="btn_org ml10">搜索</a>
+        </div>
+        <div class="btn_box">
+            <span class="line_y"></span>
+        	<a class="btn_icon add" onclick="$('#addBox').window('open')">新增</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon edit">修改</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon del">删除</a>
+            <span class="line_y"></span>
+        </div>
+        <table class="tableStyleA hav_qx">
+            <tr>
+                <th width="4%"><input type="checkbox" /></th>
+                <th width="5%">序号</th>
+                <th>按钮名称</th>
+                <th width="20%">路径</th>
+                <th>创建时间</th>
+                <th>创建者</th>
+                <th>状态</th>
+                <th>图标</th>
+                <th>描述</th>
+                <th>代码</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>1</td>
+                <td>新增</td>
+                <td></td>
+                <td>管理人</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>2</td>
+                <td>新增</td>
+                <td></td>
+                <td>管理人</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>3</td>
+                <td>新增</td>
+                <td></td>
+                <td>管理人</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>4</td>
+                <td>新增</td>
+                <td></td>
+                <td>管理人</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>5</td>
+                <td>新增</td>
+                <td></td>
+                <td>管理人</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>6</td>
+                <td>新增</td>
+                <td></td>
+                <td>管理人</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>7</td>
+                <td>新增</td>
+                <td></td>
+                <td>管理人</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="pages">
+        	<div class="text">每页10条  共548条</div>
+            <select>
+                <option>7</option>
+            </select>
+            <a class="bb"><img src="css/images/pages_a.png" /></a>
+            <a class="bb"><img src="css/images/pages_b.png" /></a>
+            <span>1</span>
+            <a>2</a>
+            <a class="bb"><img src="css/images/pages_c.png" /></a>
+            <a class="bb"><img src="css/images/pages_d.png" /></a>
+        </div>
+        
+
+    </div>
+</div>
+
+<!--新增-->
+<div id="addBox" class="easyui-window pop_win pop_narrow hav_btn_330" title="新增" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="buzhou_a">
+        <div class="win_con pl10 pr10">
+            <table class="table_input_a mt10">
+                <tr>
+                    <th width="15%">ID</th>
+                    <td width="35%"><input class="wb_bz" type="text" /></td>
+                    <th>名称</th>
+                    <td width="35%"><input class="wb_bz" type="text" /></td>
+                </tr>
+                <tr>
+                    <th>创建时间</th>
+                    <td><input class="wb_bz" type="text" /></td>
+                    <th>路径</th>
+                    <td><input class="wb_bz" type="text" /></td>
+                </tr>
+                <tr>
+                    <th>状态</th>
+                    <td><input class="wb_bz" type="text" /></td>
+                    <th>代码</th>
+                    <td><input class="wb_bz" type="text" /></td>
+                </tr>
+                <tr>
+                    <th>图标</th>
+                    <td colspan="3"><span class="btn_icon chush cho_tubiao_hav none"></span><a class="btn_green buzhou_a_next">图标库</a></td>
+                </tr>
+                <tr>
+                    <th>描述</th>
+                    <td colspan="3"><textarea class="wb_bz"></textarea></td>
+                </tr>
+            </table>
+        </div>
+        <div class="box_btns_tc">
+            <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+            <a class="btn_large btn_blue btn_win_close">保存</a>
+        </div>
+    </div>
+	<div class="buzhou_b none">
+    	<div class="win_con">
+        	<div class="tit_a">图标库</div>
+            <div class="two_search">
+                <input type="text"  />
+                <a class="btn_org">搜索</a>
+                <a class="btn_text btn_two">上传图标</a>
+            </div>
+            <ul class="list_btns h150 h_auto">
+                <li><a class="btn_icon add buzhou_b_pre cho_tubiao">新增</a></li>
+                <li><a class="btn_icon edit buzhou_b_pre cho_tubiao">修改</a></li>
+                <li><a class="btn_icon del buzhou_b_pre cho_tubiao">删除</a></li>
+                <li><a class="btn_icon paixu_save buzhou_b_pre cho_tubiao">保存排序</a></li>
+                <li><a class="btn_icon p_up buzhou_b_pre cho_tubiao">排序上</a></li>
+                <li><a class="btn_icon p_down buzhou_b_pre cho_tubiao">排序下</a></li>
+                <li><a class="btn_icon daoru buzhou_b_pre cho_tubiao">导入</a></li>
+                <li><a class="btn_icon daochu buzhou_b_pre cho_tubiao">导出</a></li>
+                <li><a class="btn_icon chush buzhou_b_pre cho_tubiao">初始化权限</a></li>
+                <li><a class="btn_icon seeall buzhou_b_pre cho_tubiao">显示全部</a></li>
+                <li><a class="btn_icon tingy buzhou_b_pre cho_tubiao">停用</a></li>
+                <li><a class="btn_icon user buzhou_b_pre cho_tubiao">用户角色配置</a></li>
+                <li><a class="btn_icon user_cha buzhou_b_pre cho_tubiao">批量修改角色</a></li>
+                <li><a class="btn_icon mima buzhou_b_pre cho_tubiao">修改签入密码</a></li>
+            </ul>
+        </div>
+        <div class="box_btns_tc">
+            <a class="btn_large btn_blue_dim buzhou_b_pre">返回</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
