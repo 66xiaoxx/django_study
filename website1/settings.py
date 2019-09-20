@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import pymysql
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,7 +46,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'website1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'django_study/website1/webpage/static').replace('\\', '/')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates').replace('\\', '/')],
         # 'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -76,10 +78,18 @@ WSGI_APPLICATION = 'website1.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': {
+        'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+        'NAME': 'uac_test',  # 数据库名，先前创建的
+        'USER': 'root',  # 用户名，可以自己创建用户
+        'PASSWORD': 'root',  # 密码
+        'HOST': '132.126.3.244',  # mysql服务所在的主机ip
+        'PORT': '3306',  # mysql服务端口
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 }
 
 
@@ -125,5 +135,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # STATIC_URL = '/django_study/website1/webpage/static/'
 STATICFILES_DIRS = (
-            os.path.join(BASE_DIR, 'django_study/website1/webpage/static').replace('\\', '/'),
+            os.path.join(BASE_DIR, 'static').replace('\\', '/'),
             )
+
+SESSION_SAVE_EVENT_REQUEST=True
+# AUTH_USER_MODEL = 'webpage.SysUser'
+# LOGIN_URL = 'login/'

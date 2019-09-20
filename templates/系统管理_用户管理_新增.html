@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>用户管理</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/icon.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="/static/js/style.js"></script>
+    <script>  $(document).ready(function(){
+        $(".window").css("display","none");
+        $(".window-shadow").css("display","none");
+    });
+	</script>
+</head>
+<body class="body_so">
+<div class="box_inner">
+    <div class="path">
+    系统管理 > 用户管理
+    </div>
+    <div class="box_content">
+    	<!--新增-->
+        <div id="addBox" class="btn_box" title="新增" >
+	         <form  action="/系统管理_用户管理/adduser/" method="post">
+        <div class="win_con tab_style_a">
+            <ul class="tabs_tit">
+                <li class="on"><a class="text">基本信息</a></li>
+                <li><a class="text">角色配置</a></li>
+            </ul>
+            <div class="tabs_con pl10">
+                <div>
+                    <table class="table_input_a mt10">
+                        <tr>
+                            <th width="10%"><span class="red">*</span>姓名</th>
+    {#                        <td width="35%"><select class="wb_bz"></select></td>#}
+                            <td width="20%"><input name="name" class="wb_bz" type="text" /></td>
+                            <td width="20%">{{ obj.errors.name.0 }}</td>
+                            <th><span class="red">*</span>账号</th>
+                            <td width="20%"><input name="account" class="wb_bz" type="text" /></td>
+                            <td width="20%">{{ obj.errors.account.0 }}</td>
+
+                        </tr>
+                        <tr>
+                            <th>机构</th>
+                            <td width="20%"><select name="org" class="wb_bz"></select></td>
+                            <td width="20%">{{ obj.errors.org.0 }}</td>
+                            <th><span class="red">*</span>职务</th>
+                            <td width="20%"><input name="staff" class="wb_bz" type="text" /></td>
+                            <td width="20%">{{ obj.errors.staff.0 }}</td>
+                        </tr>
+                        <tr>
+                            <th>密码</th>
+                            <td><input name="password1" class="wb_bz" type="text" /></td>
+                            <td width="20%">{{ obj.errors.password1.0 }}</td>
+                            <th><span class="red">*</span>确认密码</th>
+                            <td><input name="password2" class="wb_bz" type="text" /></td>
+                            {% if obj.non_field_errors%}
+                                <td width="20%">{{ obj.non_field_errors }}</td>
+                            {% else %}
+                                <td width="20%">{{ obj.errors.password2.0  }}</td>
+                            {% endif  %}
+
+                        </tr>
+                        <tr>
+                            <th>状态</th>
+                            <td><input name="radio2" type="radio" value="有效"/>有效<input class="ml20" name="radio2" type="radio" value="无效"/>无效<input class="ml20" name="radio2" type="radio" value="暂停"/>暂停</td>
+                            <td width="20%">{{ obj.errors.radio2.0 }}</td>
+                            <th>性别</th>
+                            <td><input name="radio3" type="radio" value="男" />男<input class="ml20" name="radio3" type="radio" value="女"/>女</td>
+                            <td width="20%">{{ obj.errors.radio3.0 }}</td>
+                        </tr>
+                        <tr>
+                            <th width="15%"><span class="red">*</span>手机</th>
+                            <td><input name="phone" class="wb_bz" type="text" /></td>
+                            <td width="20%">{{ obj.errors.phone.0 }}</td>
+                    </table>
+                </div>
+                <div class="none">
+                    <div class="win_con_two bg_gray">
+                        <div class="one_search">
+                            <input type="text"  />
+                            <a class="btn_org">搜索</a>
+                        </div>
+                        <div class="tree_b h258 h_auto">
+                            <ul class="list_style_p15">
+                                <li><input type="checkbox" />董事长</li>
+                                <li><input type="checkbox" />CEO</li>
+                                <li><input type="checkbox" />总经理</li>
+                                <li><input type="checkbox" />财务总监</li>
+                                <li><input type="checkbox" />小喽啰</li>
+                            </ul>
+                        </div>
+                        <div class="line_y_b100"></div>
+                        <div class="win_right_a">
+                            <div class="pt10 pb10">机构角色</div>
+                            <ul class="list_style_a h258 h_auto hav_ra1">
+                                <li>CEO<a class="poa_r fOrg">删除</a></li>
+                                <li>财务总监<a class="poa_r fOrg">删除</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--tab over-->
+            </div>
+        </div>
+        <div class="box_btns_tc">
+            <a class="btn_large btn_blue_dim btn_win_close" href="/系统管理_用户管理" target="main">取消</a>
+            <button type="submit" class="btn_large btn_blue btn_win_close" >保存</button>
+        </div>
+   </form>
+</div>
+
+    </div>
+</div>
+</body>
+</html>

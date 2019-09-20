@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>择一公司</title>
+	<link rel="shortcut icon" href="/static/css/images/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/static/css/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/icon.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="/static/js/style.js"></script>
+    <script>  $(document).ready(function(){  
+        $(".window").css("display","none");  
+        $(".window-shadow").css("display","none");
+    });
+	</script>
+</head>
+<body class="easyui-layout body_home">
+    <div class="header_user">
+        <a class="photo"><img src="" /></a>
+        {% for key,value in users_list.items %}
+            {% if key == 'account'%}
+                 <span class="name">{{ value }}</span>
+            {% endif %}
+        {% endfor %}
+        <a class="btn_tr"></a>
+        <ul class="menu_rt">
+            <li class="lock"><a onclick="$('#password').window('open')">修改密码</a></li>
+            <li class="exit">
+                <a href="/logout">安全退出</a>
+            </li>
+        </ul>
+    </div>
+	<div data-options="region:'north',border:false" class="header">
+    	<div class="logo">
+        	<span class="icon_logo"><img src="/static/css/images/logo.png" /></span>
+        	<span class="text">择一家族企业有限公司</span>
+        </div>
+        <div class="menu_nav">
+        	<ul>
+                <li><a class="menu_o" href="/系统管理_菜单管理" target="main">菜单管理</a></li>
+            	<li><a class="menu_o" href="/系统管理_角色管理" target="main">角色管理</a></li>
+            	<li><a class="menu_o" href="/系统管理_机构管理" target="main">机构管理</a></li>
+            	<li><a class="menu_o" href="/系统管理_按钮管理" target="main">按钮管理</a></li>
+            	<li><a class="menu_o" href="/系统管理_用户管理" target="main">用户管理</a></li>
+            	<li><a class="menu_o" href="/系统管理_数据字典" target="main">数据字典</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-options="region:'west',split:true" title="后台管理" class="page_r_m" style="width:185px;">
+        <div class="easyui-accordion" data-options="fit:true,border:false">
+            <div title="系统管理" data-options="selected:true">
+            	<ul class="menu_left">
+                	<li class="cdgl"><a href="/系统管理_菜单管理" target="main">菜单管理</a></li>
+                	<li class="jsgl"><a href="/系统管理_角色管理" target="main">角色管理</a></li>
+                	<li class="jggl"><a href="/系统管理_机构管理" target="main">机构管理</a></li>
+                	<li class="angl"><a href="/系统管理_按钮管理" target="main">按钮管理</a></li>
+                	<li class="yhgl on"><a href="/系统管理_用户管理" target="main">用户管理</a></li>
+                	<li class="sjzd"><a href="/系统管理_数据字典" target="main">数据字典</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-options="region:'center'">
+		<iframe name="main" id="main" class="content_iframe" style=" width:100%; height:100%; display:block;" scrolling="auto" frameborder="0" src="/系统管理_用户管理"></iframe>
+    </div>
+
+    
+<!--修改密码-->
+<div id="password" class="easyui-window pop_win pop_narrow hav_btn_200" title="修改密码" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_con pl10 pr10">
+        <table class="table_input_a mt10">
+            <tr>
+                <th width="20%"><span class="red">*</span>原密码</th>
+                <td><input class="wb_bz" type="text" /></td>
+            </tr>
+            <tr>
+                <th>新密码</th>
+                <td><input class="wb_bz" type="text" /></td>
+            </tr>
+            <tr>
+                <th>确认密码</th>
+                <td><input class="wb_bz" type="text" /></td>
+            </tr>
+        </table>
+    </div>
+    <div class="box_btns_tc">
+        <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+        <a class="btn_large btn_blue btn_win_close">保存</a>
+    </div>
+</div>
+</body>
+</html>

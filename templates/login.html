@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
     <meta name="renderer" content="webkit">
     
-    <title>12345统一认证中心</title>
+    <title>择一家族企业有限公司</title>
     <link rel="stylesheet" href="/static/v2.0/css/uplan.min.css">
     <link rel="stylesheet" href="/static/v2.0/css/uskin.min.css">
     <link rel="stylesheet" href="/static/v2.0/css/iconfont.min.css">
@@ -19,7 +19,7 @@
         <div class='up-pull-left login_logo'>
             <img src="/static/v2.0/images/login_logo.png" alt="" class="inlbk">
             <span></span>
-            <h3>xxx统一权限管理系统</h3>
+            <h3>择一公司权限管理系统</h3>
         </div>
         <div class="up-pull-right">
             <span class="up-text-muted">欢迎来使用Welcome to use</span>
@@ -36,14 +36,15 @@
             </div>
 
             <div class="login_con_body">
-                <form class="u_form u_form_block" action="/uac-web/login/doLogin" method="post">
+                <form class="u_form u_form_block" action="/login/" method="post">
                     <div class="up-form-group up-form-group-lg up-col-sm-24">
                         <div class="up-col-sm-24">
                             <div class="up-input-group">
                                 <span class="up-input-group-addon" id=""><i class="icon-u-user"></i></span>
-                                <input name="username" type="text" class="up-form-control" placeholder="请输入用户名"
+                                    <input name="username" type="text" class="up-form-control" placeholder="请输入用户名"
                                 	value="" aria-describedby="basic-addon1">
                             </div>
+                            <p>{{ obj.errors.username.0 }}</p>
                         </div>
                     </div>
 
@@ -56,42 +57,22 @@
                             </div>
                         </div>
                     </div>
+                    <span>{{ obj.errors.password.0 }}</span>
+                    <span>{{ error}}</span>
+
 
                     <div class="up-form-group up-form-group-lg up-col-sm-24" style="margin-bottom:0px;">
                        	<div style="height:45px;">
                        		<i class="up-text-primary" style="color: red;" id="message"></i>
                        	</div>
                     </div>
-                    <button type="button" onclick="doLogin();" class="up-btn up-btn-primary up-btn-lg up-btn-block">登录</button>
+                    <button type="submit" class="up-btn up-btn-primary up-btn-lg up-btn-block">登录</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-<div class="login_foot up-text-center">版权信息 广东亿迅科技有限公司 中国电信股份公司广东分公司</div>
-<script>
-	function doLogin(){
-		var username = $("input[name=username]").val();
-		var password = $("input[name=password]").val();
-		
-		if(valid()){
-			$("input[name=md5pwd]").val(hex_md5(password));
-			$("form").submit();
-		}
-	}
-	
-	function valid(){
-		var valid = false;
-	   	if($("input[name=username]").val() == ""){
-	   		$('#message').text('用户名不能为空');
-	   	}else if($("input[name=password]").val() == ""){
-	   		$('#message').text('密码不能为空');
-	   	}else{
-	   		valid = true;
-	   	}
-	   	
-	   	return valid;
-	}
-</script>
+<div class="login_foot up-text-center">版权信息 择一家族企业有限公司</div>
+
 </body>
 </html>

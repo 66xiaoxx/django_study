@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>用户管理</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/icon.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="/static/js/style.js"></script>
+    <script>  $(document).ready(function(){  
+        $(".window").css("display","none");  
+        $(".window-shadow").css("display","none");
+    });
+	</script>
+</head>
+<body class="body_so">
+<div class="box_inner">
+    <div class="path">
+    系统管理 > 用户管理
+    </div>
+    <div class="box_content">
+    	<div class="box_search">
+        	<span class="text">账号</span>
+            <input class="w120" type="text" />
+            <span class="text ml20">姓名</span>
+            <input class="w120" type="text" />
+            <span class="text ml20">状态</span>
+            <select class="w120">
+                <option value="全部">全部</option>
+                <option value="公开">公开</option>
+                <option value="不公开">不公开</option>
+            </select>
+            <span class="text ml20">机构</span>
+            <select class="w120">
+            </select>
+            <a class="btn_org ml10">搜索</a>
+        </div>
+        <div class="btn_box">
+            <span class="line_y"></span>
+        	<a class="btn_icon add" onclick="$('#addBox').window('open')">新增</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon edit">修改</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon tingy">停用</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon daoru" onclick="$('#daoru').window('open')">导入</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon daochu" onclick="$('#daochu').window('open')">导出</a>
+            <span class="line_y"></span>
+        	<a class="btn_icon user_cha">批量修改角色</a>
+            <span class="line_y"></span>
+        </div>
+        <table class="tableStyleA hav_qx">
+            <tr>
+                <th width="4%"><input type="checkbox" /></th>
+                <th width="5%">序号</th>
+                <th>帐号</th>
+                <th>姓名</th>
+                <th>职务</th>
+                <th>所属机构</th>
+                <th>性别</th>
+                <th>手机</th>
+                <th>状态</th>
+                <th width="195">操作</th>
+            </tr>
+            {% for item in user_items%}
+               <tr>
+                <td><input type="checkbox" /></td>
+                <td>{{  forloop.counter|default_if_none:'' }}</td>
+                <td><a class="a_text" onclick="$('#con').window('open')">{{ item.14 }}</a></td>
+                <td>{{ item.1|default_if_none:'' }}</td>
+                <td>{{ item.12|default_if_none:'' }}</td>
+                <td>根节点</td>
+                <td>{{ item.3|default_if_none:'' }}</td>
+                <td>{{ item.4|default_if_none:''}}</td>
+                <td>{{ item.8|default_if_none:'' }}</td>
+                <td>
+                    <a class="btn_org2" onclick="$('#w1').window('open')">用户机构配置</a>
+                    <a class="btn_org2" onclick="$('#w2').window('open')">用户角色配置</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    <div  class="pages">
+            <ul id="pagination-flickr">
+            {% if contacts.has_previous %}
+            <li class="previous" style="color:#999; letter-spacing:1px; text-align:center; font-size:14px; border-radius:3px; background:#ededed;">
+                <a  href="?page={{ contacts.previous_page_number }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}{% if request.GET.cid %}&cid={{ request.GET.cid }}{% endif %}">&laquo;上一页</a>
+            </li>
+            {% else %}
+            <li class="previous-off" >&laquo;上一页</li>
+            {% endif %}
+
+             <li class="active" >{{ contacts.number }}/{{ contacts.paginator.num_pages }}</li>
+            {% if contacts.has_next %}
+              <li class="next" style="color:#999; letter-spacing:1px; text-align:center; font-size:14px; border-radius:3px; background:#ededed; ">
+                  <a  href="?page={{ contacts.next_page_number }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}{% if request.GET.cid %}&cid={{ request.GET.cid }}{% endif %}">下一页 &raquo;</a>
+              </li>
+            {% else %}
+              <li class="next-off" >下一页 &raquo;</li>
+            {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--用户机构配置-->
+<div id="w1" class="easyui-window pop_win pop_wide" title="用户机构配置" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+    <div class="win_con_a">
+    	<div class="win_con_two bg_gray h400">
+            <div class="one_search">
+                <input type="text"  />
+                <a class="btn_org">搜索</a>
+            </div>
+            <div class="tree_b h360 h_auto">
+            	<img src="/static/css/images/_tree2.png" />
+            </div>
+            <div class="line_y_b100"></div>
+            <div class="win_right_a">
+                <div class="pt10 pb10">用户机构</div>
+                <ul class="list_style_a h360 h_auto hav_ra1">
+                    <li>市城管局-茶山城管分局-茶山公用<a class="poa_r fOrg">删除</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box_btns_tc">
+            <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+            <a class="btn_large btn_blue btn_win_close">保存</a>
+        </div>
+    </div>
+</div>
+
+<!--用户角色配置-->
+<div id="w2" class="easyui-window pop_win pop_wide" title="用户角色配置" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_con_a">
+    	<div class="win_con_two bg_gray h400">
+            <div class="one_search">
+                <input type="text"  />
+                <a class="btn_org">搜索</a>
+            </div>
+            <div class="tree_b h360 h_auto">
+            	<ul class="list_style_p15">
+                    <li><input type="checkbox" />超级管理员</li>
+                    <li><input type="checkbox" />话务员</li>
+                    <li><input type="checkbox" />话务班长</li>
+                    <li><input type="checkbox" />操作员审核</li>
+                    <li><input type="checkbox" />知识采集查无纠错审核</li>
+                    <li><input type="checkbox" />职能部门知识管理</li>
+                    <li><input type="checkbox" />承接人领导审核</li>
+                    <li><input type="checkbox" />业务知识采编</li>
+                    <li><input type="checkbox" />业务知识审核</li>
+                </ul>
+            </div>
+            <div class="line_y_b100"></div>
+            <div class="win_right_a">
+                <div class="pt10 pb10">用户角色</div>
+                <ul class="list_style_a h360 h_auto hav_ra1">
+                    <li>超级管理员<a class="poa_r fOrg">删除</a></li>
+                    <li>话务员<a class="poa_r fOrg">删除</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box_btns_tc">
+            <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+            <a class="btn_large btn_blue btn_win_close">保存</a>
+        </div>
+    </div>
+</div>
+
+<!--新增-->
+<div id="addBox" class="easyui-window pop_win pop_wide hav_btn_400" title="新增" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	 <form  action="/系统管理_用户管理/adduser/" method="post">
+        <div class="win_con tab_style_a">
+            <ul class="tabs_tit">
+                <li class="on"><a class="text">基本信息</a></li>
+                <li><a class="text">角色配置</a></li>
+            </ul>
+            <div class="tabs_con pl10">
+                <div>
+                    <table class="table_input_a mt10">
+                        <tr>
+                            <th width="15%"><span class="red">*</span>姓名</th>
+    {#                        <td width="35%"><select class="wb_bz"></select></td>#}
+                            <td width="35%"><input name="name" class="wb_bz" type="text" /></td>
+                            <th><span class="red">*</span>账号</th>
+                            <td width="35%"><input name="account" class="wb_bz" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <th>机构</th>
+                            <td width="35%"><select name="org" class="wb_bz"></select></td>
+                            <th><span class="red">*</span>职务</th>
+                            <td width="35%"><input name="staff" class="wb_bz" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <th>密码</th>
+                            <td><input name="password1" class="wb_bz" type="text" /></td>
+                            <th><span class="red">*</span>确认密码</th>
+                            <td><input name="password2" class="wb_bz" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <th>状态</th>
+                            <td><input name="radio2" type="radio" value="有效"/>有效<input class="ml20" name="radio2" type="radio" value="无效"/>无效<input class="ml20" name="radio2" type="radio" value="暂停"/>暂停</td>
+                            <th>性别</th>
+                            <td><input name="radio3" type="radio" value="男" />男<input class="ml20" name="radio3" type="radio" value="女"/>女</td>
+                        </tr>
+                        <tr>
+                            <th width="15%"><span class="red">*</span>手机</th>
+                            <td><input name="phone" class="wb_bz" type="text" /></td>
+                    </table>
+                </div>
+                <div class="none">
+                    <div class="win_con_two bg_gray">
+                        <div class="one_search">
+                            <input type="text"  />
+                            <a class="btn_org">搜索</a>
+                        </div>
+                        <div class="tree_b h258 h_auto">
+                            <ul class="list_style_p15">
+                                <li><input type="checkbox" />董事长</li>
+                                <li><input type="checkbox" />CEO</li>
+                                <li><input type="checkbox" />总经理</li>
+                                <li><input type="checkbox" />财务总监</li>
+                                <li><input type="checkbox" />小喽啰</li>
+                            </ul>
+                        </div>
+                        <div class="line_y_b100"></div>
+                        <div class="win_right_a">
+                            <div class="pt10 pb10">机构角色</div>
+                            <ul class="list_style_a h258 h_auto hav_ra1">
+                                <li>CEO<a class="poa_r fOrg">删除</a></li>
+                                <li>财务总监<a class="poa_r fOrg">删除</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--tab over-->
+            </div>
+        </div>
+        <div class="box_btns_tc">
+            <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+            <button type="submit" class="btn_large btn_blue btn_win_close" >保存</button>
+        </div>
+   </form>
+</div>
+
+<!--详情-->
+<div id="con" class="easyui-window pop_win pop_wide hav_btn_400" title="详情" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_con tab_style_a">
+        <ul class="tabs_tit">
+            <li class="on"><a class="text">基本信息</a></li>
+            <li><a class="text">角色配置</a></li>
+        </ul>
+        <div class="tabs_con pl10">
+            <div>
+                <table class="table_input_a mt10">
+                    <tr>
+                        <th width="15%"><span class="red">*</span>姓名</th>
+                        <td width="35%">糖糖</td>
+                        <th><span class="red">*</span>账号</th>
+                        <td width="35%">xxx</td>
+                    </tr>
+                    <tr>
+                        <th>机构</th>
+                        <td>总公司</td>
+                        <th><span class="red">*</span>职务</th>
+                        <td>CEO</td>
+                    </tr>
+                    <tr>
+                        <th>密码</th>
+                        <td>123456</td>
+                        <th><span class="red">*</span>确认密码</th>
+                        <td>123456</td>
+                    </tr>
+                    <tr>
+                        <th>状态</th>
+                        <td>有效</td>
+                        <th>性别</th>
+                        <td>女</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="none">
+                <div class="win_con_two bg_gray">
+            		<div class="tree_b h290 mt10 h_auto">
+                        <ul class="list_style_p15">
+                            <li>CEO</li>
+                            <li>总监</li>
+                            <li>小喽啰</li>
+                        </ul>
+                    </div>
+                    <div class="line_y_b100"></div>
+                    <div class="win_right_a">
+                        <div class="pt10 pb10">机构角色</div>
+                        <ul class="list_style_a h258 h_auto hav_ra1">
+                            <li>超级管理员</li>
+                            <li>话务员</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="none">
+                <div class="win_con_two bg_gray">
+            		<div class="tree_b h290 mt10 h_auto">
+                        <ul class="list_style_p15">
+                            <li>超级管理员</li>
+                        </ul>
+                    </div>
+                    <div class="line_y_b100"></div>
+                    <div class="win_right_a">
+                        <div class="pt10 pb10">机构角色</div>
+                        <ul class="list_style_a h258 h_auto hav_ra1">
+                            <li>超级管理员</li>
+                            <li>话务员</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--tab over-->
+        </div>
+    </div>
+    <div class="box_btns_tc">
+        <a class="btn_large btn_blue_dim btn_win_close">关闭</a>
+    </div>
+</div>
+
+<!--导入-->
+<div id="daoru" class="easyui-window pop_win pop_narrow hav_btn_180" title="导入" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_con pl10 pr10">
+        <table class="table_input_a mt10">
+            <tr>
+                <th width="20%">上传文件</th>
+                <td><input type="file" /></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><a class="btn_green">下载模版</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="box_btns_tc">
+        <a class="btn_large btn_blue_dim btn_win_close">取消</a>
+        <a class="btn_large btn_blue btn_win_close">提交</a>
+    </div>
+</div>
+
+<!--系统提示 警告-->
+<div id="daochu" class="easyui-window pop_win pop_win_ts narrow" title="系统提示" data-options="collapsible:false,minimizable:false,maximizable:false,resizable:false,closed:true">
+	<div class="win_icon_ts">
+    	<div class="icon_ts icon_ts_jg">
+    	请先选择记录
+        </div>
+    </div>
+    <div class="box_btns_tc">
+        <a class="btn_large btn_blue_dim btn_win_close">确定</a>
+    </div>
+</div>
+
+
+
+</body>
+</html>
